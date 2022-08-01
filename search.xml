@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>测试文章2</title>
+      <link href="/2022/08/01/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A02/"/>
+      <url>/2022/08/01/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A02/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试3 </category>
+          
+          <category> 测试1 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 搜索 </tag>
+            
+            <tag> 方法v </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试文章</title>
+      <link href="/2022/08/01/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+      <url>/2022/08/01/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>这里是摘要</p><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>这里是内容</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试3 </category>
+          
+          <category> 测试2 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
