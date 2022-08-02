@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>coding部署hexo小计</title>
+      <link href="/blog/2022/08/02/coding%E9%83%A8%E7%BD%B2hexo%E5%B0%8F%E8%AE%A1/"/>
+      <url>/blog/2022/08/02/coding%E9%83%A8%E7%BD%B2hexo%E5%B0%8F%E8%AE%A1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="coding部署hexo小计"><a href="#coding部署hexo小计" class="headerlink" title="coding部署hexo小计"></a>coding部署hexo小计</h1><p>coding是腾讯云出的一个研发协作平台，常用的devops功能和代码仓库都有，什么hexo 安装 部署设置就不说了，说下coding 手写hexo ci脚本的坑</p><ul><li>node版本必须与本地保持一致 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">stage(&#x27;Node.js&#x27;) &#123;</span><br><span class="line">    steps &#123;</span><br><span class="line">      sh &#x27;rm -rf /usr/lib/node_modules/npm/&#x27;</span><br><span class="line">      dir(&#x27;/root/.cache/downloads&#x27;) &#123;</span><br><span class="line">        sh &#x27;wget -nc &quot;https://coding-public-generic.pkg.coding.net/public/downloads/node-linux-x64.tar.xz?version=v16.13.0&quot; -O node-v16.13.0-linux-x64.tar.xz | true&#x27;</span><br><span class="line">        sh &#x27;tar -xf node-v16.13.0-linux-x64.tar.xz -C /usr --strip-components 1&#x27;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      sh &#x27;node -v&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ul><p> 默认的node是10<br> <img src="https://s2.loli.net/2022/08/02/XwgB3K1U5LuO9zq.png" alt="默认node版本"></p><ul><li><p>hexogit部署需要hexo的git的插件</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">stage(&#x27;hexo&#x27;) &#123;</span><br><span class="line">     steps &#123;</span><br><span class="line">       sh &#x27;npm install -g hexo-cli&#x27;</span><br><span class="line">       sh &#x27;npm install hexo --save&#x27;</span><br><span class="line">       sh &#x27;npm install hexo-renderer-pug hexo-renderer-stylus --save&#x27;</span><br><span class="line">       sh &#x27;npm install hexo-deployer-git --save&#x27;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br></pre></td></tr></table></figure></li><li><p>hexo仓库路径导致的css js找不到的问题<br> 这个就比较好搞，可以自定义githubpage的域名或者在_config.yml文件中添加你需要的访问的root路径</p><blockquote><p>root:&#x2F;blog&#x2F;</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 小计 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 持续部署 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
